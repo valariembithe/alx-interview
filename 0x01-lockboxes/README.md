@@ -1,0 +1,1 @@
+Solve task that determines if all lockboxes can opened
