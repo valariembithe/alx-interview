@@ -27,13 +27,14 @@ def parsing_line(line, stats):
 
 def main():
     """Main function"""
-    stats = {'total_size': 0, 'line_count': 0, 'status_codes': {}}
     try:
-        for i, line in enumerate(sys.stdin, start=1):
-            parsing_line(line.strip(), stats)
-            
-            if i % 10 == 0:
-                print_statistics(stats['total_size'], stats['status_codes'])
+        while True:
+            stats = {'total_size': 0, 'line_count': 0, 'status_codes': {}}
+            for i, line in enumerate(sys.stdin, start=1):
+                parsing_line(line.strip(), stats)
+                    
+                if i % 10 == 0:
+                    print_statistics(stats['total_size'], stats['status_codes'])
 
     except (KeyboardInterrupt):
         pass
